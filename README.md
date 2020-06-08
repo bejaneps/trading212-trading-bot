@@ -12,7 +12,7 @@ Currently app is in demo version, with minimal features implemented.
 **Note:** skip this section if you are going to use Docker.
 
 1. Download [Go](https://www.golang.org) and install it.
-2. Download [Selenium standalone server](https://www.selenium.dev/downloads/),  you will need Java8.0+ version to be able to run it, alternatively you can use already downloaded one in selenium folder.
+2. Download [Selenium standalone server](https://www.selenium.dev/downloads/), and browser web drivers([chromedriver](https://sites.google.com/a/chromium.org/chromedriver/) and [geckodriver](https://github.com/mozilla/geckodriver/releases)) you will need Java8.0+ version to be able to run it, alternatively you can use already downloaded one in selenium folder.
 
 ## Build
 -----------------------------------------------------
