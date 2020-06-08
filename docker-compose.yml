@@ -1,0 +1,20 @@
+version: '3'
+services:
+  standalone:
+    image: selenium/standalone:latest
+    volumes:
+      - /dev/shm:/dev/shm
+    depends_on:
+      - base
+    environment:
+      - HUB_PORT=4444
+
+  trading212:
+    build: .
+    depends_on:
+      standalone
+    ports:
+      - '4000:4000'
+
+  base:
+    image: selenium/base:latest
