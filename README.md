@@ -12,7 +12,7 @@ Currently app is in demo version, with minimal features implemented.
 **Note:** skip this section if you are going to use Docker.
 
 1. Download [Go](https://www.golang.org) and install it.
-2. Download [Selenium standalone server](https://www.selenium.dev/downloads/), run it: `java -jar server.jar`, you will need Java8.0+ version to be able to run it, alternatively you can use already downloaded one in selenium folder.
+2. Download [Selenium standalone server](https://www.selenium.dev/downloads/),  you will need Java8.0+ version to be able to run it, alternatively you can use already downloaded one in selenium folder.
 
 ## Build
 -----------------------------------------------------
@@ -22,13 +22,14 @@ Currently app is in demo version, with minimal features implemented.
 1.  Cd to repo folder and run: `chmod +x build.sh; ./build.sh`, it will create a program executable in bin/ folder.
 2.  You need Trading212 username/email and password to be able to run the program.
 3.  There is a config/conf.ini file, you can put your credentials there or you can pass your credentials as program arguments. If you cd to bin folder and run: `./web --help`, you can view additional arguments for program or you can input them in conf.ini file.
-4.  If you filled config/conf.ini with your creds, you can run program: `./web --inifile` and it will start listening on specified port(default 4000).
+4.  Before starting program, you have to start Selenium server, cd to selenium folder and run: `java -jar selenium-server.jar` or if you already have running instance you can skip this step.
+5.  If you filled config/conf.ini with your creds, you can run program: `./web --inifile` and it will start listening on specified port(default 4000).
 
 ### Docker run
 
 1. Pull Selenium images from Docker hub, by running following command: 
     `docker pull selenium/hub:latest selenium/base:latest selenium/standalone-chrome:late selenium/standalone-firefox:latest`
-2. Run Selenium standalone server as a container (you can choose firefox or chrome):
+2. Run Selenium standalone server as a container in separate terminal window (you can choose firefox or chrome):
     `docker run -d -p 4444:4444 -v /dev/shm:/dev/shm selenium/standalone-firefox:latest`
 3. Build Trading212 Trading Bot image:
     `docker build -t trading212 .`
